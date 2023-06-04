@@ -1,42 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
 
 // root
-$text-color: #777E90;
-$primary-color: #04B90B;
-$text-white: #FFFFFF;
-$title-color: #23262F;
-
-
-
+$text-color: #777e90;
+$primary-color: #04b90b;
+$text-white: #ffffff;
+$title-color: #23262f;
 
 // reset css
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: base_font;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-rendering: optimizespeed;
-    color: $text-color;
-    
+  font-family: base_font;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizespeed;
+  color: $text-color;
 }
 
-
 @font-face {
-    font-family: title_font;
-    src: url('./assets/fonts/Alice/Alice-Regular.ttf');
+  font-family: title_font;
+  src: url("./assets/fonts/Alice/Alice-Regular.ttf");
 }
 @font-face {
-    font-family: base_font;
-    src: url('./assets/fonts/Poppins/Poppins-Regular.ttf');
+  font-family: base_font;
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf");
 }
