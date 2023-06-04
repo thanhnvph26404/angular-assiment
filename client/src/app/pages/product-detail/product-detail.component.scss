@@ -1,0 +1,64 @@
+.font {
+  font-size: 48px;
+  font-family: title_font;
+  color: #23262f;
+}
+
+.price {
+  font-size: 40px;
+  font-family: title_font;
+  color: #04b90b;
+}
+.star {
+  margin-left: 20px;
+  font-size: 13px;
+  font-family: base_font;
+  font-weight: bold;
+}
+
+.prose h2 {
+  font-family: base_font;
+  color: #23262f;
+}
+
+.prose p {
+  font-size: 14px;
+  font-family: base_font;
+}
+
+.mt-4 h2 {
+  font-family: base_font;
+  color: #23262f;
+}
+
+.flavor p {
+  font-size: 12px;
+  font-family: base_font;
+}
+
+.rectangle {
+  border: 1px solid #777e90;
+  border-radius: 20px;
+  width: 700px;
+  height: 100px;
+}
+
+.right {
+  color: #04b90b;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  border: 2px solid #04b90b;
+  border-radius: 5px;
+  height: fit-content;
+  width: 80px;
+  left: 460px;
+  right: 15.62%;
+  top: 8.28%;
+  bottom: 6.34%;
+}
+
+.note {
+  border: 1px solid rgb(200, 188, 188);
+  border-radius: 8px;
+}

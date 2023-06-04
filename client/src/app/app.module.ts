@@ -12,6 +12,7 @@ import { BaseLayoutComponent } from './layouts/base-layout/base-layout.component
 import { BaseHeaderComponent } from './component/base-header/base-header.component';
 import { BaseFooterComponent } from './component/base-footer/base-footer.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
     BaseLayoutComponent,
     BaseHeaderComponent,
     BaseFooterComponent,
-    MenuPageComponent
+    MenuPageComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
