@@ -39,7 +39,15 @@ export const getAll = async (req, res) => {
   }
 };
 
-export const get = async (req, res) => {};
+export const get = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    if (!product) throw new Error("Product not found");
+    return res.status(200).json({ data: product });
+  } catch (error) {
+    return res.status(400).json({ message: error.message });
+  }
+};
 
 export const create = async (req, res) => {
   try {
