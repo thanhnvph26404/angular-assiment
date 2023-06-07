@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biểu mẫu đặt hàng</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <form class="col-8">
+                <div class="mb-3">
+                    <label for="meal-select" class="form-label">Chọn món ăn</label>
+                    <select class="form-select select-css" id="meal-select">
+                        <option selected disabled>Chọn khẩu phần</option>
+                        <option>Khẩu phần 1</option>
+                        <option>Khẩu phần 2</option>
+                        <option>Khẩu phần 3</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="taste-input" class="form-label">Hương vị</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="taste-input" placeholder="Hương vị bạn muốn ?">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="name-input" class="form-label">Tên của bạn</label>
+                    <input type="text" class="form-control" id="name-input" placeholder="Tên của bạn">
+                </div>
+                <div class="mb-3">
+                    <label for="phone-input" class="form-label">Số điện thoại</label>
+                    <input type="text" class="form-control" id="phone-input" placeholder="(+84) 132456798">
+                </div>
+                <div class="mb-3">
+                    <label for="address-input" class="form-label">Địa chỉ của bạn</label>
+                    <input type="text" class="form-control" id="address-input" placeholder="17 abc street">
+                </div>
+                <div class="mb-3">
+                    <label for="payment-select" class="form-label">Phương thức thanh toán</label>
+                    <div class="dropdown">
+                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Trả bằng tiền mặt
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Thanh toán online</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="note-input" class="form-label">Ghi chú</label>
+                    <textarea class="form-control" id="note-input" rows="3" placeholder="Thêm ghi chú"></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">ĐẶT NGAY</button>
+            </form>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</body>
+
+</html>

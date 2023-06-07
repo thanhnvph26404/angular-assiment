@@ -13,6 +13,11 @@ import { BaseHeaderComponent } from './component/base-header/base-header.compone
 import { BaseFooterComponent } from './component/base-footer/base-footer.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { FormComponent } from './component/form/form.component';
+import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
+import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
+import { BaseAdminLayoutComponent } from './component/base-admin-layout/base-admin-layout.component';
+import { BaseAdminFooterComponent } from './component/base-admin-footer/base-admin-footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     BaseHeaderComponent,
     BaseFooterComponent,
     MenuPageComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FormComponent,
+    ProductAddComponent,
+    ProductEditComponent,
+    BaseAdminLayoutComponent,
+    BaseAdminFooterComponent,
   ],
   imports: [
     BrowserModule,

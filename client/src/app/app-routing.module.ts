@@ -8,6 +8,8 @@ import { AdminProductComponent } from './pages/admin/admin-product/admin-product
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
+import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
@@ -25,7 +27,9 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'products', component: AdminProductComponent },
+      { path: 'dashboard/products', component: AdminProductComponent },
+      { path: 'dashboard/products/add', component: ProductAddComponent },
+      { path: 'dashboard/products/edit/:id', component: ProductEditComponent }
     ],
   },
   { path: '**', component: PageNotFoundComponent },
@@ -35,4 +39,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
