@@ -18,6 +18,9 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { BaseAdminLayoutComponent } from './component/base-admin-layout/base-admin-layout.component';
 import { BaseAdminFooterComponent } from './component/base-admin-footer/base-admin-footer.component';
+import { CategoryPageComponent } from './pages/admin/category-page/category-page.component';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { BaseAdminFooterComponent } from './component/base-admin-footer/base-adm
     ProductEditComponent,
     BaseAdminLayoutComponent,
     BaseAdminFooterComponent,
+    CategoryPageComponent,
+    CategoryAddComponent,
+    CategoryEditComponent,
   ],
   imports: [
     BrowserModule,
