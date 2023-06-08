@@ -10,6 +10,8 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { ProductAddComponent } from './pages/admin/product-add/product-add.component';
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
+import { CategoryPageComponent } from './pages/admin/category-page/category-page.component';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 
 const routes: Routes = [
   {
@@ -27,9 +29,12 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'dashboard/products', component: AdminProductComponent },
-      { path: 'dashboard/products/add', component: ProductAddComponent },
-      { path: 'dashboard/products/edit/:id', component: ProductEditComponent }
+      { path: 'dashboard/category/add', component: CategoryAddComponent },
+      { path: 'dashboard/category', component: CategoryPageComponent },
+      { path: 'dashboard/category/edit/:id', component: ProductEditComponent },
+      { path: 'dashboard/product', component: AdminProductComponent },
+      { path: 'dashboard/product/add', component: ProductAddComponent },
+      { path: 'dashboard/product/edit/:id', component: ProductEditComponent }
     ],
   },
   { path: '**', component: PageNotFoundComponent },
