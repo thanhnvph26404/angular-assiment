@@ -92,68 +92,103 @@ export const create = async (req, res) => {
   }
 };
 
-
 export const update = async (req, res) => {
-    try {
-        const { error } = productSchema.validate(req.body, { abortEarly: false });
-        if (error) {
-            return res.status(400).json({
-                messages: error.details.map((message) => ({ message }))
-            });
-        }
-        const productId = req.params.id;
-        const productOld = await Product.findById(productId)
-        const oldPublicId = productOld.image.public_id
-        const { name, image, price, flavor, description, note, categoryId } = req.body
-        const [uploadResult, deleteResult] = await Promise.all([
-            cloudinary.uploader.upload(image),
-            cloudinary.uploader.destroy(oldPublicId)
-        ])
-        
-        const product = new Product({
-            name,
-            image: {
-                public_id: uploadResult.public_id,
-                url: uploadResult.secure_url,
-            },
-            price,
-            flavor,
-            description,
-            note,
-            categoryId
-        })
-        
-        
-        
-        const updatedProduct = await Product.findOneAndUpdate({ _id: productId }, product, { new: true });
-        if (!updatedProduct) {
-            return res.sendStatus(404);
-        }
-
-        // Xóa sản phẩm cũ khỏi danh sách products của category cũ
-        const oldCategoryId = updatedProduct.categoryId;
-        await Category.findByIdAndUpdate(
-            oldCategoryId,
-            { $pull: { products: productId } }
-        );
-
-        // Thêm sản phẩm mới vào danh sách products của category mới
-        const newCategoryId = req.body.categoryId;
-        if (newCategoryId) {
-            // Thêm sản phẩm mới vào danh sách products của category mới
-            await Category.findByIdAndUpdate(
-                newCategoryId,
-                { $addToSet: { products: productId } }
-            );
-        }
-        return res.status(200).json(updatedProduct);
-    } catch (error) {
-        return res.status(500).json({
-            message: "Cập nhật sản phẩm không thành công",
-            error: error.message,
-        });
+  try {
+    const { error } = productSchema.validate(req.body, { abortEarly: false });
+    if (error) {
+      return res.status(400).json({
+        messages: error.details.map((message) => ({ message })),
+      });
     }
+    const productId = req.params.id;
+    const productOld = await Product.findById(productId);
+    const oldPublicId = productOld.image.public_id;
+    const { name, image, price, flavor, description, note, categoryId } =
+      req.body;
+    const [uploadResult, deleteResult] = await Promise.all([
+      cloudinary.uploader.upload(image),
+      cloudinary.uploader.destroy(oldPublicId),
+    ]);
+
+    const product = new Product({
+      name,
+      image: {
+        public_id: uploadResult.public_id,
+        url: uploadResult.secure_url,
+      },
+      price,
+      flavor,
+      description,
+      note,
+      categoryId,
+    });
+
+    const updatedProduct = await Product.findOneAndUpdate(
+      { _id: productId },
+      product,
+      { new: true }
+    );
+    if (!updatedProduct) {
+      return res.sendStatus(404);
+    }
+
+    // Xóa sản phẩm cũ khỏi danh sách products của category cũ
+    const oldCategoryId = updatedProduct.categoryId;
+    await Category.findByIdAndUpdate(oldCategoryId, {
+      $pull: { products: productId },
+    });
+
+    // Thêm sản phẩm mới vào danh sách products của category mới
+    const newCategoryId = req.body.categoryId;
+    if (newCategoryId) {
+      // Thêm sản phẩm mới vào danh sách products của category mới
+      await Category.findByIdAndUpdate(newCategoryId, {
+        $addToSet: { products: productId },
+      });
+    }
+    return res.status(200).json(updatedProduct);
+  } catch (error) {
+    return res.status(500).json({
+      message: "Cập nhật sản phẩm không thành công",
+      error: error.message,
+    });
+  }
 };
 
+export const remove = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { isHardDelete } = req.body;
 
-export const remove = async (req, res) => {};
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return res.status(404).json({
+        message: "Không tìm thấy sản phẩm",
+      });
+    }
+    // xóa image trên cloudinary
+    await cloudinary.uploader.destroy(product.image.public_id);
+    // Nếu client gửi lên isHardDelete = true thì xóa sản phẩm vĩnh viễn
+    // Ngoài ra xóa luôn id sản phẩm khỏi danh sách products ở category
+    if (isHardDelete) {
+      await product.forceDelete();
+      // Xóa sản phẩm cũ khỏi danh sách products của category cũ
+      await Category.findByIdAndUpdate(product.categoryId, {
+        $pull: { products: product._id },
+      });
+    } else {
+      await product.delete();
+    }
+
+    return res.status(200).json({
+      message: "Xóa sản phẩm thành công",
+      data: product,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Xóa sản phẩm thất bại",
+      error: error.message,
+    });
+  }
+};
