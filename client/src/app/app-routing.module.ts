@@ -14,6 +14,7 @@ import { CategoryPageComponent } from './pages/admin/category-page/category-page
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 
 const routes: Routes = [
   {
@@ -35,7 +36,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'dashboard/category/add', component: CategoryAddComponent },
       { path: 'dashboard/category', component: CategoryPageComponent },
-      { path: 'dashboard/category/edit/:id', component: ProductEditComponent },
+      { path: 'dashboard/category/edit/:id', component: CategoryEditComponent },
       { path: 'dashboard/product', component: AdminProductComponent },
       { path: 'dashboard/product/add', component: ProductAddComponent },
       { path: 'dashboard/product/edit/:id', component: ProductEditComponent },
@@ -48,4 +49,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
