@@ -12,6 +12,8 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { CategoryPageComponent } from './pages/admin/category-page/category-page.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomePageComponent },
       { path: 'menu', component: MenuPageComponent },
+      { path: 'signin', component: SigninComponent },
+      { path: 'signup', component: SignupComponent },
       { path: 'product/:id', component: ProductDetailComponent },
     ],
   },
@@ -34,7 +38,7 @@ const routes: Routes = [
       { path: 'dashboard/category/edit/:id', component: ProductEditComponent },
       { path: 'dashboard/product', component: AdminProductComponent },
       { path: 'dashboard/product/add', component: ProductAddComponent },
-      { path: 'dashboard/product/edit/:id', component: ProductEditComponent }
+      { path: 'dashboard/product/edit/:id', component: ProductEditComponent },
     ],
   },
   { path: '**', component: PageNotFoundComponent },
@@ -44,4 +48,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

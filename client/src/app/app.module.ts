@@ -22,6 +22,8 @@ import { BaseAdminFooterComponent } from './component/base-admin-footer/base-adm
 import { CategoryPageComponent } from './pages/admin/category-page/category-page.component';
 import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
 import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
+import { SigninComponent } from './pages/signin/signin.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { CategoryEditComponent } from './pages/admin/category-edit/category-edit
     CategoryPageComponent,
     CategoryAddComponent,
     CategoryEditComponent,
+    SigninComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
