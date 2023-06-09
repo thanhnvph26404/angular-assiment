@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Add New Product</h1>
+                    <h1 class="m-0">Edit Product</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -13,24 +13,40 @@
 
     <!-- Main content -->
     <div class="container">
-        <h1>Tạo mới sản phẩm</h1>
+        <h2>Edit Product</h2>
+        <form action="">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="">
+            </div>
+            <div class="form-group">
+                <label>Price:</label>
+                <input type="number" id="">
+            </div>
+            <div class="form-group">
+                <label>Image:</label>
+                <input type="file" id="">
+            </div>
+            <div class="form-group">
+                <label>Flavor:</label>
+                <input type="text" id="">
+            </div>
+            <div class="form-group">
+                <label>Description:</label>
+                <input type="text" id="">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Category</label>
+                <select class="form-select form-select-lg" name="" id="">
+                    <option selected style="font-size: large;">Select one</option>
+                    <option value="" style="font-size: large;">Đồ ăn</option>
+                    <option value="" style="font-size: large;">Đồ uống</option>
+                </select>
+            </div>
+            <br>
+            <button class="btn-lg btn-success">Edit</button>
+        </form>
 
-        <div class="form-group">
-            <label for="category-name">Tên sản phẩm:</label>
-            <input type="text" id="category-name">
-        </div>
-        <div class="form-group">
-            <label for="category-name">Giá:</label>
-            <input type="text" id="category-name">
-        </div>
-        <div class="form-group">
-            <label for="category-name">Hình ảnh:</label>
-            <input type="file" id="category-name">
-        </div>
-        <br>
-        <div class="form-group ">
-            <button>Sửa</button>
-        </div>
     </div>
     <!-- /.main-content -->
 </div>
