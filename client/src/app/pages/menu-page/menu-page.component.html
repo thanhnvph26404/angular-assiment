@@ -7,37 +7,31 @@
     </p>
   </div>
   <!-- category -->
-  <div class="category">
-    <div class="category-item active">
+  <div class="category" >
+    <div *ngFor="let category of categories; index as i" class="category-item" [ngClass]="{'active': selectedIndex === i}" (click)="selectCategory(i, category._id!)">
       <img src="../../../assets/images/Rectangle 12908.png" alt="" />
-      <h6>Korean Food</h6>
+      <h6>{{category.name}}</h6>
     </div>
-    <div class="category-item">
-      <img src="../../../assets/images/Rectangle 12908.png" alt="" />
-      <h6>Korean Food</h6>
-    </div>
-    <div class="category-item">
-      <img src="../../../assets/images/Rectangle 12908.png" alt="" />
-      <h6>Korean Food</h6>
-    </div>
+    
   </div>
 
   <!-- list menu -->
 
   <div class="grid grid-cols-3 gap-4">
-    <div class="mx-auto rounded-lg shadow">
+    <div *ngFor="let product of products" class="mx-auto rounded-lg shadow">
       <a href=""
         ><img
-          class="px-4 rounded-t-lg mx-auto"
-          src="../../../assets/images/doan2.jpg"
+          class="px-4 rounded-t-lg mx-auto block "
+          style="height: 284px;"
+          src={{product.image.url}}
           alt="product image"
       /></a>
       <div class="px-5">
-        <a href="/product/64344862086d8f4dadc853ed">
+        <a [routerLink]="'/product/'+product._id">
           <h5
-            class="font-semibold tracking-tight text-black-900 dark:text-white"
+            class="font-semibold tracking-tight text-black-900 "
           >
-            Jajangmyeon
+            {{product.name}}
           </h5>
         </a>
         <div class="-ms-0.5 icon flex">
@@ -51,7 +45,7 @@
 
         <div class="flex price">
           <span class="text-[20px] font-bold text-[#D70018] dark:text-white"
-            >$21.99</span
+            >${{product.price}}</span
           >
           <button class="bnt">Order Now</button>
         </div>

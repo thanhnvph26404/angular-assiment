@@ -58,7 +58,7 @@ export const create = async (req, res) => {
     }
 
     // Thêm sản phẩm vào database
-    const { name, image, price, flavor, description, note, categoryId } =
+    const { name, image, price, flavor, description, categoryId } =
       req.body;
     const result = await cloudinary.uploader.upload(image);
     const product = new Product({
@@ -70,7 +70,6 @@ export const create = async (req, res) => {
       price,
       flavor,
       description,
-      note,
       categoryId,
     });
     await product.save();
@@ -103,7 +102,7 @@ export const update = async (req, res) => {
     const productId = req.params.id;
     const productOld = await Product.findById(productId);
     const oldPublicId = productOld.image.public_id;
-    const { name, image, price, flavor, description, note, categoryId } =
+    const { name, image, price, flavor, description, categoryId } =
       req.body;
     const [uploadResult, deleteResult] = await Promise.all([
       cloudinary.uploader.upload(image),
@@ -119,7 +118,6 @@ export const update = async (req, res) => {
       price,
       flavor,
       description,
-      note,
       categoryId,
     });
 
