@@ -32,14 +32,14 @@
                 </thead>
                 <tbody>
                     <!-- ${product.map(item => <tr>${item.name}</tr>)} -->
-                    <tr>
-                        <td width="50"></td>
-                        <td width="50"></td>
-                        <td width="50"></td>
-                        <td width="50"></td>
-                        <td width="50"></td>
-                        <td width="50"></td>
-                        <td width="50"></td>
+                    <tr *ngFor="let product of products; index as i">
+                        <td width="50">{{i+1}}</td>
+                        <td width="50">{{product.name}}</td>
+                        <td width="50"><img src={{product.image.url}} alt=""></td>
+                        <td width="50">{{product.price}}</td>
+                        <td width="50">{{product.flavor}}</td>
+                        <td width="50">{{product.description}}</td>
+                        <td width="50">{{product.categoryName}}</td>
                         <td width="50">
                             <button class="btn btn-primary">
                                 Edit

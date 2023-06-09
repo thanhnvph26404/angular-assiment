@@ -21,21 +21,19 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
-                        <th>Slug</th>
+                        <th>Name</th>             
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td width="50"></td>
-                        <td width="50"></td>
-                        <td width="50"></td>
+                    <tr *ngFor="let category of categories; index as i">
+                        <td width="50">{{i+1}}</td>
+                        <td width="50">{{category.name}}</td>              
                         <td width="50">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" [routerLink]="'/admin/dashboard/category/edit/:id'">
                                 Edit
                             </button>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" (click)="onRemove(category._id!)">
                                 Delete
                             </button>
                         </td>

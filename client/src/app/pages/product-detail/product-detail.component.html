@@ -2,7 +2,7 @@
   <div class="relative mx-auto max-w-screen-xl px-4 py-8">
     <div class="grid grid-cols-1 items-start gap-8 md:grid-cols-2">
       <div class="grid grid-cols-2 gap-4 md:grid-cols-1">
-        <img alt="Les Paul" src="../../../assets/images/z4368031888934_3d4790e077977b8d0a5aabfd554ee0b2.jpg"
+        <img alt="" src={{product.image.url}}
           class="aspect-square w-full rounded-xl object-cover" />
       </div>
 
@@ -13,14 +13,14 @@
         </strong>
 
         <div class="max-w-[100ch] space-y-2">
-          <h1 class="font">Yangnyeom Chicken</h1>
+          <h1 class="font">{{product.name}}</h1>
           <div class="right">
             <strong>
               <i class=" fa-fire" style="color: #38c73a"></i> 02:21:11
             </strong>
           </div>
 
-          <p class="price">$21.99</p>
+          <p class="price">${{product.price}}</p>
 
           <div class="-ms-0.5 flex">
             <i class="fa-solid fa-star" style="color: #04b90b"></i>
@@ -41,31 +41,19 @@
 
         <div class="mt-4">
           <div class="prose">
-            <h2>Description:</h2>
+            <h2 class="p-2">Description:</h2>
             <p>
-              Yangnyeom chicken (Korean: 양념치킨) is a variety of Korean fried
-              chicken seasoned with a sweet and spicy sauce of gochujang,
-              garlic, sugar, and other spices. It is often eaten as anju, food
-              consumed while drinking, in South Korea.
+              {{product.description}}
             </p>
           </div>
         </div>
         <div class="mt-4">
-          <h2>Adjust the flavor:</h2>
+          <h2 class="p-2">Adjust the flavor:</h2>
           <div class="flavor flex space-x-20">
-            <div class="grid-rows-1">
-              <p><i class="fa-solid fa-circle fa-2xs"></i> sugar</p>
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Gochujang</p>
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Rice win vinegar</p>
-            </div>
-            <div class="grid-rows-1">
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Strawberry jam</p>
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Soy sauce</p>
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Garlic</p>
-            </div>
-            <div class="grid-rows-1">
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Ginger</p>
-              <p><i class="fa-solid fa-circle fa-2xs"></i> Butter</p>
+            <div class="prose">
+              <p>
+                {{product.flavor}}
+              </p>
             </div>
           </div>
         </div>
@@ -80,7 +68,7 @@
 
         <form class="mt-8">
           <button type="submit"
-            class="block rounded bg-[#04b90b] px-5 py-3 text-xl font-medium text-white hover:bg-green-500">
+            class="block rounded bg-[#04b90b] px-4 py-3 text-xl font-medium text-white hover:bg-green-500">
             ORDER NOW
           </button>
         </form>
