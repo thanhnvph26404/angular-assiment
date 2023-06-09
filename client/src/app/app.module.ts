@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
@@ -18,6 +19,9 @@ import { ProductAddComponent } from './pages/admin/product-add/product-add.compo
 import { ProductEditComponent } from './pages/admin/product-edit/product-edit.component';
 import { BaseAdminLayoutComponent } from './component/base-admin-layout/base-admin-layout.component';
 import { BaseAdminFooterComponent } from './component/base-admin-footer/base-admin-footer.component';
+import { CategoryPageComponent } from './pages/admin/category-page/category-page.component';
+import { CategoryAddComponent } from './pages/admin/category-add/category-add.component';
+import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 
 @NgModule({
   declarations: [
@@ -37,12 +41,17 @@ import { BaseAdminFooterComponent } from './component/base-admin-footer/base-adm
     ProductEditComponent,
     BaseAdminLayoutComponent,
     BaseAdminFooterComponent,
+    CategoryPageComponent,
+    CategoryAddComponent,
+    CategoryEditComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
