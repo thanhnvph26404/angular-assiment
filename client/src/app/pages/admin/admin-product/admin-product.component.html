@@ -41,10 +41,10 @@
                         <td width="50">{{product.description}}</td>
                         <td width="50">{{product.categoryName}}</td>
                         <td width="50">
-                            <button class="btn btn-primary">
+                            <button class="btn btn-primary" [routerLink]="'/admin/dashboard/product/edit/'+product._id">
                                 Edit
                             </button>
-                            <button class="btn btn-danger">
+                            <button class="btn btn-danger" (click)="onRemove(product._id)">
                                 Delete
                             </button>
                         </td>

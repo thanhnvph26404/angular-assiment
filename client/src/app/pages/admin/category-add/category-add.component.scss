@@ -48,11 +48,18 @@ h2 {
     cursor: pointer;
 }
 
-.form-group button:hover {
-    background-color: #00d708;
+// .form-group button:hover {
+//     background-color: #00d708;
 
+// }
+.btn-success {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
 }
-
+.btn-success:hover {
+    opacity: .8;
+}
 .category-list {
     list-style: none;
     padding: 0;
