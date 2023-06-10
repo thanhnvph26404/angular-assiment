@@ -24,7 +24,10 @@ import { CategoryAddComponent } from './pages/admin/category-add/category-add.co
 import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
-
+import { SpecialOfferComponent } from './component/special-offer/special-offer.component';
+import { HeroComponent } from './component/hero/hero.component';
+import { InfoComponent } from './component/info/info.component';
+import { DeliComponent } from './component/deli/deli.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +51,10 @@ import { SignupComponent } from './pages/signup/signup.component';
     CategoryEditComponent,
     SigninComponent,
     SignupComponent,
+    SpecialOfferComponent,
+    HeroComponent,
+    InfoComponent,
+    DeliComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,4 +65,4 @@ import { SignupComponent } from './pages/signup/signup.component';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

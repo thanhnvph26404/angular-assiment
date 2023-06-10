@@ -1,0 +1,112 @@
+@import "../../../styles.scss";
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    flex-direction: column;
+}
+
+.intro {
+    max-width: 770px;
+    margin: 80px auto 32px;
+    gap: 1.2rem;
+    text-align: center;
+
+    h1 {
+        font-size: 4.8rem;
+        line-height: 5.5rem;
+        color: $title-color;
+        font-family: title_font;
+        text-transform: capitalize;
+
+        span {
+            color: $primary-color;
+        }
+
+
+    }
+
+    p {
+        width: 614px;
+        height: 297px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        color: #353945;
+    }
+}
+
+.price span {
+    margin-top: 20px;
+    color: #04b90b;
+}
+
+.bnt {
+    width: 117px;
+    height: 40px;
+    border: 1px solid #04b90b;
+    background-color: #04b90b;
+    border-radius: 8px;
+    color: #fcfcfd;
+    margin-left: 100px;
+    margin-top: 18px;
+}
+
+h2 {
+    width: 354px;
+    height: 27px;
+
+    font-family: 'Alice';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 27px;
+
+    /* Primary color */
+
+    color: #04B90B;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.view {
+    width: 136px;
+    height: 20px;
+
+    /* Button label 2 */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+    align-items: center;
+
+    /* Primary color */
+
+    color: #04B90B;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.right {
+    margin-top: 100px;
+    width: 614px;
+    height: 297px;
+}

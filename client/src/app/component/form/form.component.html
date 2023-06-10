@@ -1,64 +1,71 @@
-<!DOCTYPE html>
-<html lang="vi">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biểu mẫu đặt hàng</title>
-</head>
-
-<body>
-    <div class="container">
-        <div class="row">
-            <form class="col-8">
-                <div class="mb-3">
-                    <label for="meal-select" class="form-label">Chọn món ăn</label>
-                    <select class="form-select select-css" id="meal-select">
-                        <option selected disabled>Chọn khẩu phần</option>
-                        <option>Khẩu phần 1</option>
-                        <option>Khẩu phần 2</option>
-                        <option>Khẩu phần 3</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="taste-input" class="form-label">Hương vị</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="taste-input" placeholder="Hương vị bạn muốn ?">
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="name-input" class="form-label">Tên của bạn</label>
-                    <input type="text" class="form-control" id="name-input" placeholder="Tên của bạn">
-                </div>
-                <div class="mb-3">
-                    <label for="phone-input" class="form-label">Số điện thoại</label>
-                    <input type="text" class="form-control" id="phone-input" placeholder="(+84) 132456798">
-                </div>
-                <div class="mb-3">
-                    <label for="address-input" class="form-label">Địa chỉ của bạn</label>
-                    <input type="text" class="form-control" id="address-input" placeholder="17 abc street">
-                </div>
-                <div class="mb-3">
-                    <label for="payment-select" class="form-label">Phương thức thanh toán</label>
-                    <div class="dropdown">
-                        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Trả bằng tiền mặt
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Thanh toán online</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="note-input" class="form-label">Ghi chú</label>
-                    <textarea class="form-control" id="note-input" rows="3" placeholder="Thêm ghi chú"></textarea>
-                </div>
-                <button type="submit" class="btn btn-success">ĐẶT NGAY</button>
-            </form>
-            <div class="col-4"></div>
+<div class="wrapper">
+    <div class="row">
+        <div class="intro">
+            <h1>Get the best Taste <span>Now!</span></h1>
+            <p>Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.</p>
         </div>
     </div>
-</body>
+    <div class="row">
+        <div class="col-2"></div>
+        <form class="col-4">
+            <h2>What’s your Taste?</h2>
+            <p>Fill out the form and let us know your taste.</p>
+            <br>
+            <div class="mb-3">
+                <label for="meal-select" class="form-label ">Select your Meal</label>
+                <button class="float-right" routerLink="menu" style="color: #04b90b;">View menu</button>
+                <select class="form-select select-css" id="meal-select">
+                    <option selected disabled>What's your Taste?</option>
+                    <option>Taste 1</option>
+                    <option>Taste 2</option>
+                    <option>Taste 3</option>
+                </select>
+                <button style="color: #04b90b;" routerLink="menu">Add 1 Taste +</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="name-input" class="form-label">Order name</label>
+                        <input type="text" class="form-control2" id="name-input" placeholder="Your name">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3 float-right">
+                        <label for="phone-input" class="form-label">Phone number</label>
+                        <input type="text" class="form-control2" id="phone-input" placeholder="(+84) 132456798">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address-input" class="form-label">Your address</label>
+                <input type="text" class="form-control" id="address-input" placeholder="17 abc street">
+            </div>
+            <div class="mb-3">
+                <label for="meal-select" class="form-label">Payment method</label>
+                <select class="form-select select-css" id="meal-select">
+                    <option selected>I'll pay cash</option>
+                    <option>Online payment method</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label for="note-input" class="form-label">Note for us</label>
+                        <textarea class="form-control" id="note-input" rows="3"
+                            placeholder="More spicy, more sauce, ..." style="height: 130px;"></textarea>
+                    </div>
+                </div>
+            </div>
 
-</html>
+            <p>You will pay <span style="color: #04b90b;">$0.00</span></p>
+            <button type="submit" class="bnt">ORDER NOW</button>
+        </form>
+        <div class="col-1"></div>
+        <div class="col-4">
+            <img style="margin-top: 130px;" src="../../../assets/images/deli.png" alt="">
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+<br>
+<br>

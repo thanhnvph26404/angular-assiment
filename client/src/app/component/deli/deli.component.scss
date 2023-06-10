@@ -1,0 +1,146 @@
+@import "../../../styles.scss";
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    flex-direction: column;
+}
+
+.intro {
+    max-width: 770px;
+    margin: 80px auto 32px;
+    gap: 1.2rem;
+    text-align: center;
+
+    h1 {
+        font-size: 4.8rem;
+        line-height: 5.5rem;
+        color: $title-color;
+        font-family: title_font;
+        text-transform: capitalize;
+
+        span {
+            color: $primary-color;
+        }
+
+
+    }
+
+    p {
+        width: 614px;
+        height: 297px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+        color: #353945;
+    }
+}
+
+h2 {
+    width: 222px;
+    height: 32px;
+
+    /* Tittle 1 */
+
+    font-family: 'Alice';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+    /* identical to box height */
+
+    letter-spacing: -0.005em;
+
+    /* Neutral/2 */
+
+    color: #23262F;
+
+}
+
+p {
+    width: 313px;
+    height: 48px;
+
+    /* Body 4 */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* Neutral/3 */
+
+    color: #353945;
+
+}
+
+.border-icon {
+    width: 120px;
+    height: 120px;
+    flex-direction: column;
+    align-items: center;
+    background: #FFFFFF;
+    box-shadow: 5px 9px 16px rgba(0, 0, 0, 0.04);
+    border-radius: 151px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-1 {
+    margin-top: 107px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 36px;
+    gap: 24px;
+    width: 385px;
+    height: 310px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.item-2 {
+    margin-top: 107px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 36px;
+    gap: 24px;
+    width: 385px;
+    height: 310px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 27px rgba(53, 53, 53, 0.05);
+    border-radius: 12px;
+}
+
+i {
+    text-align: center;
+}
+
+.col-4 {
+    text-align: center;
+}
+
+.col-4 i {
+    display: block;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
