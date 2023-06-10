@@ -30,7 +30,7 @@
           <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
             Signup
           </h2>
-          <form action="" class="w-full">
+          <form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()" class="w-full">
             <div id="input" class="flex flex-col w-full my-5">
               <label for="username" class="text-gray-500 mb-2 mr-[550px]"
                 >Username</label
@@ -38,10 +38,20 @@
               <input
                 type="text"
                 id="username"
+                formControlName="name"
                 placeholder="Please insert your username"
                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
               />
             </div>
+            <div
+            *ngIf="
+                formSignup.get('name')?.hasError('required') &&
+                (formSignup.get('name')?.touched ||
+                    formSignup.get('name')?.dirty)
+            "
+        >
+            Name is Required
+        </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="email" class="text-gray-500 mb-2 mr-[550px]"
                 >Email</label
@@ -49,10 +59,29 @@
               <input
                 type="email"
                 id="email"
+                formControlName="email"
                 placeholder="Please insert your email"
                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
               />
             </div>
+            <div
+            *ngIf="
+                formSignup.get('email')?.hasError('required') &&
+                (formSignup.get('email')?.touched ||
+                    formSignup.get('email')?.dirty)
+            "
+        >
+            Email is Required
+        </div>
+        <div
+            *ngIf="
+                formSignup.get('email')?.hasError('email') &&
+                (formSignup.get('email')?.touched ||
+                    formSignup.get('email')?.dirty)
+            "
+        >
+            Email invalid
+        </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="password" class="text-gray-500 mb-2 mr-[530px]"
                 >Password</label
@@ -60,10 +89,32 @@
               <input
                 type="password"
                 id="password"
+                formControlName="password"
                 placeholder="Please insert your password"
                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
               />
             </div>
+            <div *ngIf="formSignup.get('password')?.hasError('required') && submitted">
+              password is Required
+          </div>
+            <div
+            *ngIf="
+                formSignup.get('password')?.hasError('password') &&
+                (formSignup.get('password')?.touched ||
+                    formSignup.get('password')?.dirty)
+            "
+        >
+            Mật khẩu là bắt buộc
+        </div>
+        <div
+            *ngIf="
+                formSignup.get('password')?.hasError('minlength') &&
+                (formSignup.get('password')?.touched ||
+                    formSignup.get('password')?.dirty)
+            "
+        >
+            Mật khẩu phải trên 6 ký tự
+        </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="password" class="text-gray-500 mb-2 mr-[450px]"
                 >Confirm password</label
@@ -71,13 +122,23 @@
               <input
                 type="password"
                 id="confirmPassword"
+                formControlName="confirmPassword"
                 placeholder="Please insert your confirmPassword"
                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
               />
             </div>
+            <div
+            *ngIf="
+                formSignup.hasError('notMatch') &&
+                (formSignup.get('confirmPassword')?.touched ||
+                    formSignup.get('confirmPassword')?.dirty)
+            "
+        >
+            Mật khẩu không khớp
+        </div>
             <div id="button" class="flex flex-col w-full my-5">
               <button
-                type="button"
+                type="submit"
                 class="w-full py-4 bg-green-600 rounded-lg text-green-100"
               >
                 <div class="flex flex-row items-center justify-center">
