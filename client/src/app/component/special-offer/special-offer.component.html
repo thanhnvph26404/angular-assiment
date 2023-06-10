@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="intro">
+            <h1>Today <span>Special </span>Offers</h1>
+            <p>
+                Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60 minutes.
+            </p>
+        </div>
+        <!-- list menu -->
+        <div class="row">
+            <div class="grid grid-cols-3">
+                <div *ngFor="let product of products" class="mx-auto rounded-lg shadow slide">
+                    <a [routerLink]="'/product/'+product._id" href=""><img class="px-4 rounded-t-lg mx-auto block"
+                            style="height: 284px;" [src]="product.image.url" alt="product image" /></a>
+                    <div class="px-5">
+                        <a [routerLink]="'/product/'+product._id">
+                            <h5 class="font-semibold tracking-tight text-black-900 ">
+                                {{product.name}}
+                            </h5>
+                        </a>
+                        <div class="-ms-0.5 icon flex">
+                            <i class="fa-solid fa-star" style="color: #04b90b"></i>
+                            <i class="fa-solid fa-star" style="color: #04b90b"></i>
+                            <i class="fa-solid fa-star" style="color: #04b90b"></i>
+                            <i class="fa-solid fa-star" style="color: #04b90b"></i>
+                            <i class="fa-solid fa-star" style="color: #04b90b"></i>
+                            <p class="text-[#444444] text-[16px]">214 Đánh giá</p>
+                        </div>
+
+                        <div class="flex price">
+                            <a href="" [routerLink]="'/product/'+product._id"><span
+                                    class="text-[20px] font-bold text-[#04b90b] dark:text-white">${{product.price}}</span></a>
+                        </div>
+                        <a href="" [routerLink]="'/product/'+product._id"><button class="bnt float-right">Order
+                                Now</button></a>
+                    </div>
+                    <div><br></div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

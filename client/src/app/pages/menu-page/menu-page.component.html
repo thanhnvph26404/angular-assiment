@@ -7,30 +7,24 @@
     </p>
   </div>
   <!-- category -->
-  <div class="category" >
-    <div *ngFor="let category of categories; index as i" class="category-item" [ngClass]="{'active': selectedIndex === i}" (click)="selectCategory(i, category._id!)">
+  <div class="category">
+    <div *ngFor="let category of categories; index as i" class="category-item"
+      [ngClass]="{'active': selectedIndex === i}" (click)="selectCategory(i, category._id!)">
       <img src="../../../assets/images/Rectangle 12908.png" alt="" />
       <h6>{{category.name}}</h6>
     </div>
-    
+
   </div>
 
   <!-- list menu -->
 
   <div class="grid grid-cols-3 gap-4">
     <div *ngFor="let product of products" class="mx-auto rounded-lg shadow">
-      <a href=""
-        ><img
-          class="px-4 rounded-t-lg mx-auto block "
-          style="height: 284px;"
-          src={{product.image.url}}
-          alt="product image"
-      /></a>
+      <a href=""><img class="px-4 rounded-t-lg mx-auto block " style="height: 284px;" src={{product.image.url}}
+          alt="product image" /></a>
       <div class="px-5">
         <a [routerLink]="'/product/'+product._id">
-          <h5
-            class="font-semibold tracking-tight text-black-900 "
-          >
+          <h5 class="font-semibold tracking-tight text-black-900 ">
             {{product.name}}
           </h5>
         </a>
@@ -44,9 +38,7 @@
         </div>
 
         <div class="flex price">
-          <span class="text-[20px] font-bold text-[#D70018] dark:text-white"
-            >${{product.price}}</span
-          >
+          <span class="text-[20px] font-bold text-[#D70018] dark:text-white">${{product.price}}</span>
           <button class="bnt">Order Now</button>
         </div>
       </div>
