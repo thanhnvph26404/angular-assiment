@@ -15,6 +15,7 @@ import { CategoryAddComponent } from './pages/admin/category-add/category-add.co
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { CategoryEditComponent } from './pages/admin/category-edit/category-edit.component';
+import { authGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminLayoutComponent,
+    component: AdminLayoutComponent, canActivate: [authGuard],
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
