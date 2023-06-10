@@ -5,7 +5,7 @@ import { productSchema } from "../schemas/product";
 export const getAll = async (req, res) => {
   const {
     _page = 1,
-    _limit = 10,
+    _limit = 100  ,
     _sort = "createAt",
     _order = "asc",
     _expand,
@@ -93,23 +93,34 @@ export const create = async (req, res) => {
 
 export const update = async (req, res) => {
   try {
-    const { error } = productSchema.validate(req.body, { abortEarly: false });
-    if (error) {
-      return res.status(400).json({
-        messages: error.details.map((message) => ({ message })),
-      });
-    }
+    // const { error } = productSchema.validate(req.body, { abortEarly: false });
+    // if (error) {
+    //   return res.status(400).json({
+    //     messages: error.details.map((message) => ({ message })),
+    //   });
+    // }
     const productId = req.params.id;
     const productOld = await Product.findById(productId);
     const oldPublicId = productOld.image.public_id;
     const { name, image, price, flavor, description, categoryId } =
       req.body;
-    const [uploadResult, deleteResult] = await Promise.all([
+    let product
+    if (!image) {
+      product = {
+      name,
+      image: productOld?.image,
+      price,
+      flavor,
+      description,
+      categoryId,
+    }
+    } else {
+      const [uploadResult, deleteResult] = await Promise.all([
       cloudinary.uploader.upload(image),
       cloudinary.uploader.destroy(oldPublicId),
     ]);
 
-    const product = new Product({
+     product = {
       name,
       image: {
         public_id: uploadResult.public_id,
@@ -119,7 +130,10 @@ export const update = async (req, res) => {
       flavor,
       description,
       categoryId,
-    });
+    }
+    }
+    
+    
 
     const updatedProduct = await Product.findOneAndUpdate(
       { _id: productId },

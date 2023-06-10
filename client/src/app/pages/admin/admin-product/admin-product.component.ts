@@ -26,6 +26,11 @@ export class AdminProductComponent {
   }
 
   onRemove(id: string | number) {
-    this.productService.removeProduct(id)
+    if (confirm('Are you sure you want to remove this product')){
+      this.productService.removeProduct(id).subscribe(() => {
+        this.products = this.products.filter(product => product._id !== id)
+        alert('product removed successfully')
+      })
+    }
   }
 }
