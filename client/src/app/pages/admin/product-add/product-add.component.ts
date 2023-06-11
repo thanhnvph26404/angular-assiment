@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/interface/Product';  
 import { CategoryService } from 'src/app/service/category.service';
@@ -24,12 +24,12 @@ export class ProductAddComponent {
   }
 
   productForm = this.formBuilder.group({
-    name: [''],
-    image: [''],
-    price: [0],
-    flavor: [''],
-    description: [''],
-    categoryId: [''],
+    name: ['', [Validators.required]],
+    image: ['', [Validators.required]],
+    price: [0, [Validators.required]],
+    flavor: ['', [Validators.required]],
+    description: ['', [Validators.required]],
+    categoryId: ['',[Validators.required]],
   })
 
   handleImageUpload(event: any) {
