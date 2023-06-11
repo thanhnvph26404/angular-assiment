@@ -18,22 +18,72 @@
             <div class="form-group">
                 <label>Name:</label>
                 <input type="text" id="" formControlName="name">
+                <div
+                *ngIf="
+                productForm.get('name')?.hasError('required') &&
+                    (productForm.get('name')?.touched ||
+                    productForm.get('name')?.dirty)
+                "
+                class="text-red-500"
+            >
+                Tên sản phẩm không được để trống
+            </div>
             </div>
             <div class="form-group">
                 <label>Price:</label>
                 <input type="number" id="" formControlName="price">
+                <div
+                *ngIf="
+                productForm.get('price')?.hasError('required') &&
+                    (productForm.get('price')?.touched ||
+                    productForm.get('price')?.dirty)
+                "
+                class="text-red-500"
+            >
+                Giá sản phẩm không được để trống
+            </div>
             </div>
             <div class="form-group">
                 <label>Image:</label>
-                <input type="file" id="" accept="image/*" (change)="handleImageUpload($event)">
+                <input type="file" id="" accept="image/*" (change)="handleImageUpload($event)" formControlName="image" >
+                <div
+                *ngIf="
+                productForm.get('image')?.hasError('required') &&
+                    (productForm.get('image')?.touched ||
+                    productForm.get('image')?.dirty)
+                "
+                class="text-red-500"
+            >
+                Ảnh sản phẩm không được để trống
+            </div>
             </div>
             <div class="form-group">
                 <label>Flavor:</label>
                 <input type="text" id="" formControlName="flavor">
+                <div
+                *ngIf="
+                productForm.get('flavor')?.hasError('required') &&
+                    (productForm.get('flavor')?.touched ||
+                    productForm.get('flavor')?.dirty)
+                "
+                class="text-red-500"
+            >
+                Nguyên liệu sản phẩm không được để trống
+            </div>
             </div>
             <div class="form-group">
                 <label>Description:</label>
                 <input type="text" id="" formControlName="description">
+                <div
+                *ngIf="
+                productForm.get('description')?.hasError('required') &&
+                    (productForm.get('description')?.touched ||
+                    productForm.get('description')?.dirty)
+                "
+                class="text-red-500"
+            >
+                Mô tả sản phẩm không được để trống
+            </div>
             </div>
             <div class="mb-3">
                 <label for="" class="form-label">Category</label>
@@ -42,6 +92,16 @@
                     <option *ngFor="let category of categories" value={{category._id}} style="font-size: large;">{{category.name}}</option>
                     
                 </select>
+            </div>
+            <div
+                *ngIf="
+                productForm.get('categoryId')?.hasError('required') &&
+                    (productForm.get('categoryId')?.touched ||
+                    productForm.get('categoryId')?.dirty)
+                "
+                class="text-red-500"
+            >
+                Mô tả sản phẩm không được để trống
             </div>
             <br>
             <button class="btn-lg btn-success">Add New</button>
