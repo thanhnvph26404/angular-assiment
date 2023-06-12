@@ -1,7 +1,7 @@
 @import "../../../styles.scss";
 
 .wrapper {
-    max-width: 1440px;
+    max-width: 1380px;
     margin: 0 auto;
 
     flex-direction: column;
@@ -30,10 +30,23 @@
     p {
         color: #777e91;
         font-weight: 400;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 36px;
-        text-align: left;
     }
+}
+
+
+
+.p {
+    width: 42px !important;
+    height: 48px !important;
+    text-align: center !important;
+    font-family: 'Poppins' !important;
+    font-weight: 600 !important;
+    font-size: 32px !important;
+    line-height: 48px !important;
+    color: #777E91;
+    word-spacing: 3px;
 }
 
 .price span {
