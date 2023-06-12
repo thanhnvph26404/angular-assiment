@@ -10,7 +10,7 @@ export class SpecialOfferComponent {
 
   constructor(private productService: ProductService) {
     this.productService.getProducts().subscribe(response => {
-      this.products = response.data.slice(0, 3)
+      this.products = response.data.slice(0, 4)
     });
   };
 

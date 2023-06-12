@@ -16,7 +16,7 @@
         </div>
         <!-- list menu -->
         <div class="row">
-            <div class="grid grid-cols-3">
+            <div class="grid grid-cols-4" style="justify-content: space-between; gap: 3rem;">
                 <div *ngFor="let product of products" class="mx-auto rounded-lg shadow slide">
                     <a [routerLink]="'/product/'+product._id" href=""><img class="px-4 rounded-t-lg mx-auto block"
                             style="height: 284px;" [src]="product.image.url" alt="product image" /></a>
