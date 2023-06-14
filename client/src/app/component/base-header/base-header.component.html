@@ -7,6 +7,25 @@
     <li><a class="link" routerLink="">Blog</a></li>
     <li><a class="link" routerLink="">Contact</a></li>
     <li class="order"><a class="link" routerLink="">ORDER NOW</a></li>
+
+    <li *ngIf="!isLoggedIn">
+      <i class="fa-solid fa-user 2xl" style="color: #2a8d36;"></i>
+     <a routerLink="signin" class="ml-2">Signin/</a>
+     <a routerLink="signup" class="ml-2">Signup</a>
+    </li>
+    
+    <li *ngIf="isLoggedIn">
+      <svg class="h-10 w-10  text-gray-800" (click)="handleState()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
+      <ul  *ngIf="state" class="menucon1 hover:display-block">
+        <li class="menucon2 " *ngIf="user.role == 'admin' "><a href="/admin" class="menucon3">Dashboard</a></li>
+        <li class="menucon2" (click)="logout()"><a href="" class="menucon3">Logout</a></li>
+      </ul>
+    </li>
+    <li *ngIf="user">
+      <span>{{user.name}}</span>
+    </li>
     </ul>   
     
 </header>

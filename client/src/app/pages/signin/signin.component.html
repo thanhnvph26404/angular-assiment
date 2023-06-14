@@ -47,8 +47,9 @@
                 (formSignin.get('email')?.touched ||
                     formSignin.get('email')?.dirty)
             "
+            class="text-red-500"
         >
-            Email is Required
+            Email Không được để trống
         </div>  
         <div
             *ngIf="
@@ -56,8 +57,9 @@
                 (formSignin.get('email')?.touched ||
                     formSignin.get('email')?.dirty)
             "
+            class="text-red-500"
         >
-            Email invalid
+            Email không đúng định dạng
         </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="password" class="text-gray-500 mb-2 mr-[550px]"
@@ -79,6 +81,7 @@
                 (formSignin.get('password')?.touched ||
                     formSignin.get('password')?.dirty)
             "
+            class="text-red-500"
         >
             Mật khẩu phải trên 6 ký tự
         </div>
@@ -111,8 +114,8 @@
                 <a href="#" class="w-full text-center font-medium text-gray-500"
                   >Recover password!</a
                 >
-                <a href="#" class="w-full text-center font-medium text-gray-500"
-                  >Singup!</a
+                <a href="/signup" class="w-full text-center font-medium text-gray-500"
+                  >Signup!</a
                 >
               </div>
             </div>

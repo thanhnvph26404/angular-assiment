@@ -30,6 +30,8 @@
           <h2 class="text-2xl font-bold text-gray-800 text-left mb-5">
             Signup
           </h2>
+
+          
           <form [formGroup]="formSignup" (ngSubmit)="onHandleSubmit()" class="w-full">
             <div id="input" class="flex flex-col w-full my-5">
               <label for="username" class="text-gray-500 mb-2 mr-[550px]"
@@ -49,8 +51,9 @@
                 (formSignup.get('name')?.touched ||
                     formSignup.get('name')?.dirty)
             "
+            class="text-red-500"
         >
-            Name is Required
+            Tên không được để trống
         </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="email" class="text-gray-500 mb-2 mr-[550px]"
@@ -70,8 +73,9 @@
                 (formSignup.get('email')?.touched ||
                     formSignup.get('email')?.dirty)
             "
+            class="text-red-500"
         >
-            Email is Required
+            Email không được để trống
         </div>
         <div
             *ngIf="
@@ -79,8 +83,9 @@
                 (formSignup.get('email')?.touched ||
                     formSignup.get('email')?.dirty)
             "
+            class="text-red-500"
         >
-            Email invalid
+            Email không đúng định dạng
         </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="password" class="text-gray-500 mb-2 mr-[530px]"
@@ -94,7 +99,7 @@
                 class="appearance-none border-2 border-gray-100 rounded-lg px-4 py-3 placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-green-600 focus:shadow-lg"
               />
             </div>
-            <div *ngIf="formSignup.get('password')?.hasError('required') && submitted">
+            <div *ngIf="formSignup.get('password')?.hasError('required') && submitted" class="text-red-500">
               password is Required
           </div>
             <div
@@ -103,18 +108,20 @@
                 (formSignup.get('password')?.touched ||
                     formSignup.get('password')?.dirty)
             "
-        >
-            Mật khẩu là bắt buộc
-        </div>
-        <div
+            class="text-red-500"
+          >
+            Mật khẩu khong được để trống
+           </div>
+           <div
             *ngIf="
                 formSignup.get('password')?.hasError('minlength') &&
                 (formSignup.get('password')?.touched ||
                     formSignup.get('password')?.dirty)
             "
-        >
+            class="text-red-500"
+           >
             Mật khẩu phải trên 6 ký tự
-        </div>
+           </div>
             <div id="input" class="flex flex-col w-full my-5">
               <label for="password" class="text-gray-500 mb-2 mr-[450px]"
                 >Confirm password</label
@@ -133,9 +140,10 @@
                 (formSignup.get('confirmPassword')?.touched ||
                     formSignup.get('confirmPassword')?.dirty)
             "
-        >
+            class="text-red-500"
+           >
             Mật khẩu không khớp
-        </div>
+           </div>
             <div id="button" class="flex flex-col w-full my-5">
               <button
                 type="submit"
@@ -158,15 +166,15 @@
                       ></path>
                     </svg>
                   </div>
-                  <div class="font-bold">Signup</div>
+                  <div class="font-bold" >Signup</div>
                 </div>
               </button>
               <div class="flex justify-evenly mt-5">
                 <a href="#" class="w-full text-center font-medium text-gray-500"
                   >Recover password!</a
                 >
-                <a href="#" class="w-full text-center font-medium text-gray-500"
-                  >Singup!</a
+                <a href="/signin" class="w-full text-center font-medium text-gray-500"
+                  >Signin!</a
                 >
               </div>
             </div>

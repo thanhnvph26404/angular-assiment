@@ -61,8 +61,8 @@ export class ProductAddComponent {
     
     
     this.productService.addProduct(product).subscribe((product) => {
-      alert('Product added successfully')
-      this.router.navigate(['/admin/dashboard/product'])
+        alert('Product added successfully')
+        this.router.navigate(['/admin/dashboard/product'])
     })
   }
 }
